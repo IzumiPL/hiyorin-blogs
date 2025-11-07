@@ -1,6 +1,7 @@
 ---
 
 import { getEntry, render } from "astro:content";
+import { title } from "node:process";
 import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
@@ -28,13 +29,13 @@ const items = [
 		siteurl: "https://akile.io/",
 		tags: ["CloudServiceArea"],
 	},
-    {
-        title: "Vercel",
-        imgurl: "https://vercel.com/favicon.ico",
-        desc: "静态网站托管平台",
-        siteurl: "https://vercel.com",
-        tags: ["WebHostingPlatform"],
-    },
+	{
+		title: "Vercel",
+		imgurl: "https://vercel.com/favicon.ico",
+		desc: "静态网站托管平台",
+		siteurl: "https://vercel.com",
+		tags: ["WebHostingPlatform"],
+	},
 	{
 		title: "Netlify",
 		imgurl: "https://netlify.com/favicon/apple-touch-icon.png",
@@ -99,41 +100,48 @@ const items = [
 		siteurl: "https://anime-pictures.net/?lang=zh_CN;",
 		tags: ["Anime", "Wallpaper"],
 	},
-    {
-        title: "Pixiv",
+	{
+		title: "Pixiv",
 		imgurl: "https://www.pixiv.net/favicon.ico",
 		desc: "插画、漫画、小说作品交流服务 [pixiv]",
-        siteurl: "https://www.pixiv.net/",
-        tags: ["Anime", "Wallpaper"],
-    },
-    {
-        title: "TouchGal",
+		siteurl: "https://www.pixiv.net/",
+		tags: ["Anime", "Wallpaper"],
+	},
+	{
+		title: "TouchGal",
 		imgurl: "https://www.touchgal.us/favicon.ico",
 		desc: "一站式 Galgame 文化社区",
-        siteurl: "https://www.touchgal.us/",
-        tags: ["Anime", "Wallpaper"],
-    },
-    {
-        title: "ACG盒子",
+		siteurl: "https://www.touchgal.us/",
+		tags: ["Anime", "Wallpaper"],
+	},
+	{
+		title: "ACG盒子",
 		imgurl: "https://www.acgbox.link/wp-content/uploads/logo/86742914_p0.png",
 		desc: "ACG盒子 - 专注ACG的导航盒子_ACG导航网站",
-        siteurl: "https://www.acgbox.link/",
-        tags: ["Anime", "Wallpaper"],
-    },
-    {
-        title: "Phira",
+		siteurl: "https://www.acgbox.link/",
+		tags: ["Anime", "Wallpaper"],
+	},
+	{
+		title: "Phira",
 		imgurl: "https://phira.moe/assets/icon-708be29a.png",
 		desc: "Phigros 二创社区",
-        siteurl: "https://phira.moe/",
-        tags: ["Anime", "Wallpaper"],
-    },
-    {
-        title: "UU在线工具",
-        imgurl: "https://uutool.cn/assets/images/favicon.png",
-        desc: "在线圆角图片制作工具",
-        siteurl: "https://uutool.cn/img-radius/",
-        tags: ["Anime", "Wallpaper"],
-    },
+		siteurl: "https://phira.moe/",
+		tags: ["Anime", "Wallpaper"],
+	},
+	{
+		title: "UU在线工具",
+		imgurl: "https://uutool.cn/assets/images/favicon.png",
+		desc: "在线圆角图片制作工具",
+		siteurl: "https://uutool.cn/img-radius/",
+		tags: ["Anime", "Wallpaper"],
+	},
+	{
+		title: "",
+		imgurl: "",
+		desc: "",
+		siteurl: "",
+		tags: "",
+	},
 ];
 
 function shuffleArray(array) {
