@@ -11,21 +11,19 @@
 
 /* 导入 ZenMaruGothic-Medium 字体 */
 @font-face {
-  font-family: 'ZenMaruGothic-Medium';
-  src: url('/assets/font/ZenMaruGothic-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
+    font-family: 'ZenMaruGothic-Medium';
+    src: url('/assets/font/ZenMaruGothic-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
 }
 
-
-
-/* 导入 萝莉体 第二版 字体 */
+/* 导入 Hanalei 字体 */
 @font-face {
-	font-family: "萝莉体 第二版";
-	src: url("/assets/font/萝莉体 第二版.woff2") format("woff2");
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
+    font-family: "Hanalei";
+    src: url("/assets/font/Hanalei.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
 }
 
 @tailwind base;

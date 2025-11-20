@@ -20,7 +20,7 @@ if (!friendsPost) {
 }
 
 const { Content } = await render(friendsPost);
-const friendsList = getShuffledFriendsList();
+const friendsList = getFriendsList();
 
 // 获取所有标签
 const allTags = Array.from(new Set(friendsList.flatMap((item) => item.tags)));

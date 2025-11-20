@@ -12,7 +12,7 @@ let isSwitching = false;
 const isBothSidebars = sidebarLayoutConfig.position === "both";
 
 function checkScreenSize() {
-	isSmallScreen = window.innerWidth < 1200;
+	isSmallScreen = window.innerWidth < 1024;
 	if (isSmallScreen) {
 		currentLayout = "list";
 	}

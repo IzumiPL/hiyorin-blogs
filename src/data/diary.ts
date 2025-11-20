@@ -11,16 +11,30 @@ export interface DiaryItem {
 	tags?: string[];
 }
 
+
 // 示例日记数据
 const diaryData: DiaryItem[] = [
-	{
-		id: 1,
-		content:
-			"The falling speed of cherry blossoms is five centimeters per second!",
-		date: "2025-01-15T10:30:00Z",
-		images: ["/images/diary/sakura.jpg", "/images/diary/1.jpg"],
-	},
+    {
+        id: 0,
+        content: "Phigros!",
+        date: "2025-10-02T03:02:00Z",
+        images: getDirItemsByNumber( "/images/diary/Phingros/Demo/", "jpg", 2),
+    },
+    {
+        id: 1,
+        content: "Call Of Duty Control Settings",
+        date: "2024-11-20T14:45:00Z",
+        images: getDirItemsByNumber("/images/diary/Call of Duty Settings/Control/", "png", 9),
+    },
 ];
+
+function getDirItemsByNumber(dir: string, suffix: string, count: number) {
+    let items = [];
+    for (let i = 1; i <= count; i++) {
+        items.push(`${dir}/${i}.${suffix}`);
+    }
+    return items
+}
 
 // 获取日记统计数据
 export const getDiaryStats = () => {
