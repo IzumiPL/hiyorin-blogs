@@ -57,20 +57,10 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
         url: "/skills/",
         icon: "material-symbols:psychology",
     },
-    [LinkPreset.Timeline]: {
-        name: i18n(I18nKey.timeline),
-        url: "/timeline/",
-        icon: "material-symbols:timeline",
-    },
-    // [LinkPreset.App]: {
-    //     name: i18n(I18nKey.app),
-    //     url: "/app/",
-    //     icon: "material-symbols:apps",
-    // },
     [LinkPreset.Other]: {
         name: "其他",
         url: "#",
         icon: "material-symbols:more-horiz",
-        children: [LinkPreset.Projects, LinkPreset.Skills, LinkPreset.Timeline],
+        children: [LinkPreset.Projects, LinkPreset.Skills],
     },
 };
