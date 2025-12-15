@@ -4,7 +4,7 @@ published: 2025-10-15
 description: '通过PySide6选择文件或文件夹'
 image: ''
 tags: ["PySide6", "Python", "Qt", "File"]
-category: '网络安全'
+category: 'PySide6'
 draft: false 
 lang: ''
 pinned: false
