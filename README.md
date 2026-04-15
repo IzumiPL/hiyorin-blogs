@@ -1,6 +1,6 @@
 # Mikuas Blogs
 
-![0](0.png)
+![Mikuas Blogs Preview](README.png)
 个人博客网站，基于
 [Astro](https://astro.build),
 [Mizuki](https://github.com/matsuzaka-yuki/mizuki),

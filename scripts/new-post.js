@@ -51,8 +51,6 @@ tags: []
 category: ''
 draft: false 
 lang: ''
-pinned: false
-author: Mikuas
 ---
 `
 
