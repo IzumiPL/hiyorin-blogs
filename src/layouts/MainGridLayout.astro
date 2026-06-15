@@ -144,10 +144,12 @@ const defaultPostListLayout = siteConfig.postListLayout?.defaultMode || "list";
 const initialRightSidebarHidden = defaultPostListLayout === "grid";
 
 // 动态网格布局类名 - 根据侧边栏模式调整列宽
+// md (1024px): 左侧边栏 + 主内容（2列）
+// lg (1280px): 左侧边栏 + 主内容 + 右侧边栏（3列）
 const gridCols = `
 	${mobileShowSidebar ? "grid-cols-1" : "grid-cols-1"}
 	${tabletShowSidebar ? "grid-cols-1" : "grid-cols-1"}
-	${desktopShowSidebar ? "lg:grid-cols-[17.5rem_1fr]" : "lg:grid-cols-1"}
+	${desktopShowSidebar ? "md:grid-cols-[17.5rem_1fr]" : "md:grid-cols-1"}
 	${isBothSidebarMode ? "lg:grid-cols-[17.5rem_1fr_17.5rem]" : ""}
 `
 	.trim()
@@ -158,14 +160,14 @@ const sidebarClass = `
 	mb-4 row-start-2 row-end-3 col-span-1 onload-animation
 	${mobileShowSidebar ? "block" : "hidden"}
 	${tabletShowSidebar ? "block row-start-2 row-end-3 col-span-1" : "hidden"}
-	${desktopShowSidebar ? "lg:block lg:row-start-1 lg:row-end-2 lg:max-w-[17.5rem] lg:col-start-1 lg:col-end-2" : "lg:hidden"}
+	${desktopShowSidebar ? "md:block md:row-start-1 md:row-end-2 md:max-w-[17.5rem] md:col-start-1 md:col-end-2" : "md:hidden"}
 `
 	.trim()
 	.replace(/\s+/g, " ");
 
 // 右侧边栏容器类名
 // 手机端：显示在左侧栏下方（row-start-3），全宽
-// 桌面端：定位到网格第3列（右侧）
+// 桌面端（lg 1280px）：定位到网格第3列（右侧）
 // 如果默认是 grid 模式，初始就隐藏
 const rightSidebarClass = `
 	mb-4 col-span-1 onload-animation
@@ -183,8 +185,8 @@ const mainContentClass = `
 	transition-swup-fade overflow-hidden w-full
 	col-span-1 row-start-1 row-end-2
 	${tabletShowSidebar ? "col-span-1 row-start-1 row-end-2" : "col-span-1"}
-	${desktopShowSidebar ? "lg:col-start-2 lg:col-end-3" : "lg:col-span-1"}
-	${isBothSidebarMode ? "lg:col-start-2 lg:col-end-3" : ""}
+	${desktopShowSidebar ? "md:col-start-2 md:col-end-3" : "md:col-span-1"}
+	${isBothSidebarMode ? "md:col-start-2 md:col-end-3" : ""}
 `
 	.trim()
 	.replace(/\s+/g, " ");
@@ -420,12 +422,12 @@ const transparentClass = shouldEnableTransparency
 						
 						if (currentLayout === 'grid') {
 							postListContainer.classList.add('grid-mode');
-							postListContainer.classList.add('grid', 'grid-cols-1', 'lg:grid-cols-2', 'gap-6');
+							postListContainer.classList.add('grid', 'grid-cols-1', 'md:grid-cols-2', 'gap-6');
 							postListContainer.classList.remove('flex', 'flex-col');
 						} else {
 							postListContainer.classList.add('list-mode');
 							postListContainer.classList.add('flex', 'flex-col');
-							postListContainer.classList.remove('grid', 'grid-cols-1', 'lg:grid-cols-2', 'gap-6');
+							postListContainer.classList.remove('grid', 'grid-cols-1', 'md:grid-cols-2', 'gap-6');
 						}
 					}
 					
@@ -919,8 +921,8 @@ body.no-banner-mode .absolute.w-full.z-30 {
     }
 }
 
-/* 平板设备横幅优化 (641px - 1279px) */
-@media (min-width: 641px) and (max-width: 1279px) {
+/* 平板设备横幅优化 (641px - 1023px) */
+@media (min-width: 641px) and (max-width: 1023px) {
     /* Banner wrapper 高度优化 */
     #banner-wrapper {
         height: 70vh !important;
@@ -993,8 +995,8 @@ body.no-banner-mode .absolute.w-full.z-30 {
     }
 }
 
-/* 桌面端保持居中 (1280px+) */
-@media (min-width: 1280px) {
+/* 桌面端保持居中 (1024px+) */
+@media (min-width: 1024px) {
     .banner-text-overlay {
         align-items: center !important; /* 垂直居中 */
         justify-content: center !important; /* 水平居中 */
@@ -1047,7 +1049,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端图片优化 */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
     /* 移动端图片容器优化 */
     .carousel-item img,
     #banner img {
@@ -1097,7 +1099,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 手机端非首页隐藏banner - 改进的分阶段动画 */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
     #banner-wrapper {
         transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out;
         transform-origin: top center;
@@ -1137,7 +1139,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端导航栏与banner的协调 */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
     #navbar-wrapper {
         /* 移除覆盖样式，让Navbar.astro的圆角和半透明效果生效 */
     }
@@ -1149,7 +1151,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端banner性能优化 */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
     .banner-container {
         /* 启用硬件加速 */
         transform: translateZ(0);
@@ -1260,7 +1262,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 桌面设备Grid模式：使用双列布局 */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
     #main-grid[data-layout-mode="grid"] {
         grid-template-columns: 17.5rem 1fr !important;
     }
@@ -1271,7 +1273,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 确保大屏桌面设备Grid模式配置 */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
     #main-grid[data-layout-mode="grid"] {
         grid-template-columns: 17.5rem 1fr !important;
     }
@@ -1282,7 +1284,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端当banner被禁用时的布局样式 */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
     .absolute.w-full.z-30.no-banner-layout {
         top: 5.5rem !important;
         min-height: calc(100vh - 5.5rem) !important;
@@ -1300,7 +1302,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 平板设备当banner被禁用时的布局样式 */
-@media (min-width: 641px) and (max-width: 1279px) {
+@media (min-width: 641px) and (max-width: 1023px) {
     .absolute.w-full.z-30.no-banner-layout {
         top: 5.5rem !important;
         min-height: calc(100vh - 5.5rem) !important;
@@ -1309,7 +1311,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端横屏优化 */
-@media (max-width: 1279px) and (orientation: landscape) {
+@media (max-width: 1023px) and (orientation: landscape) {
     #banner-wrapper:not(.mobile-hide-banner) {
         top: 0 !important; /* 横屏模式从顶部开始，避免被导航栏覆盖 */
         height: 60vh !important;
@@ -1345,7 +1347,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端暗色模式优化 */
-@media (max-width: 1279px) and (prefers-color-scheme: dark) {
+@media (max-width: 1023px) and (prefers-color-scheme: dark) {
     .banner-text-overlay {
         background: linear-gradient(
             to top,
@@ -1413,7 +1415,7 @@ body.no-banner-mode .absolute.w-full.z-30 {
 }
 
 /* 移动端水波纹特殊优化 */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
     #header-waves {
         /* 确保水波纹容器不被裁剪 */
         overflow: visible;

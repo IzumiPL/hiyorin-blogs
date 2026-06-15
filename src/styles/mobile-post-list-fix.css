@@ -110,8 +110,8 @@ body.wallpaper-transparent .card-base .card-base,
   }
 }
 
-/* 中等屏幕（769px-1280px）强制透明 - 重点修复区域 */
-@media (min-width: 769px) and (max-width: 1280px) {
+/* 中等屏幕（769px-1279px）强制透明 - 重点修复区域 */
+@media (min-width: 769px) and (max-width: 1279px) {
   body.wallpaper-transparent .card-base,
   body.wallpaper-transparent #post-list-container .card-base,
   body.wallpaper-transparent .post-card-item .card-base {
@@ -132,7 +132,7 @@ body.wallpaper-transparent .card-base .card-base,
 }
 
 /* 大屏幕（>1280px）强制透明 */
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
   body.wallpaper-transparent .card-base,
   body.wallpaper-transparent #post-list-container .card-base,
   body.wallpaper-transparent .post-card-item .card-base {

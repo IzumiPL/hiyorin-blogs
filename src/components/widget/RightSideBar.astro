@@ -87,13 +87,14 @@ const stickyComponents = rightSidebarComponents.filter(
   }
   
   /* 响应式设计 */
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     .right-sidebar {
       max-width: 260px;
     }
   }
-  
-  @media (max-width: 1024px) {
+
+  /* 右侧边栏在 lg (1280px) 以上才显示 */
+  @media (max-width: 1279px) {
     .right-sidebar {
       display: none;
     }

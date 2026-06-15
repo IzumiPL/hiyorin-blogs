@@ -9,8 +9,9 @@ module.exports = {
         sans: ["Roboto", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        'md': '1280px',  // 原默认值: 768px, 增大后navbar会更早坍缩
-        'lg': '1280px',  // 原默认值: 1024px, 保持与md一致以确保统一的响应式行为
+        'sm': '768px',   // 手机/平板分界：图片位置切换
+        'md': '1024px',  // 平板端：显示左侧边栏 + 主内容
+        'lg': '1280px',  // 桌面端：显示左侧 + 中间 + 右侧边栏
       },
     },
   },

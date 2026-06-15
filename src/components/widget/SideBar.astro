@@ -93,19 +93,19 @@ function renderComponent(component: any, index: number, _components: any[]) {
 <!-- 响应式样式和JavaScript -->
 <style>
 	/* 响应式断点样式 */
-	@media (max-width: 1280px) {
+	@media (max-width: 1024px) {
 		#sidebar {
 			display: var(--sidebar-mobile-display, block);
 		}
 	}
 	
-	@media (min-width: 769px) and (max-width: 1279px) {
+	@media (min-width: 769px) and (max-width: 1023px) {
 		#sidebar {
 			display: var(--sidebar-tablet-display, block);
 		}
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1024px) {
 		#sidebar {
 			display: var(--sidebar-desktop-display, block);
 		}
