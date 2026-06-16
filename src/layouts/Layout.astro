@@ -526,7 +526,7 @@ function showBanner() {
 		}
 
 		// Handle mobile single image banner - 使用与电脑端相同的逻辑
-		const mobileBanner = document.querySelector('.block.lg\\:hidden[alt="Mobile banner image of the blog"]');
+		const mobileBanner = document.querySelector('.block.sm\\:hidden[alt="Mobile banner image of the blog"]');
 		if (mobileBanner && !document.getElementById('banner-carousel')) {
 			// 移动端使用与电脑端相同的初始化逻辑
 			mobileBanner.classList.remove('opacity-0', 'scale-105');

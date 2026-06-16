@@ -1,6 +1,6 @@
-# Mikuas Blogs
+# Izumi Blogs
 
-![Mikuas Blogs Preview](README.png)
+![Izumi Blogs Preview](README.png)
 
 个人博客网站，基于
 [Astro](https://astro.build),
@@ -57,22 +57,22 @@ licenseUrl: ''                     # 可选，许可证链接
 
 ### 字段说明
 
-| 字段 | 类型 | 必填 | 默认值 | 说明 |
-|------|------|------|--------|------|
-| `title` | string | ✅ | - | 文章标题 |
-| `published` | date | ✅ | - | 发布日期，格式：YYYY-MM-DD |
-| `updated` | date | ❌ | - | 更新日期 |
-| `description` | string | ❌ | "" | 文章描述，显示在列表页 |
-| `image` | string | ❌ | "" | 封面图片路径 |
-| `tags` | string[] | ❌ | [] | 标签列表 |
-| `category` | string | ❌ | "" | 分类名称 |
-| `draft` | boolean | ❌ | false | 设为 true 则不会发布 |
-| `pinned` | boolean | ❌ | false | 设为 true 则文章置顶 |
-| `lang` | string | ❌ | "" | 文章语言 |
-| `author` | string | ❌ | "" | 作者名称 |
-| `encrypted` | boolean | ❌ | false | 是否加密文章 |
-| `password` | string | ❌ | "" | 加密文章的密码 |
-| `permalink` | string | ❌ | - | 自定义 URL 路径 |
+| 字段            | 类型       | 必填 | 默认值   | 说明                 |
+|---------------|----------|----|-------|--------------------|
+| `title`       | string   | ✅  | -     | 文章标题               |
+| `published`   | date     | ✅  | -     | 发布日期，格式：YYYY-MM-DD |
+| `updated`     | date     | ❌  | -     | 更新日期               |
+| `description` | string   | ❌  | ""    | 文章描述，显示在列表页        |
+| `image`       | string   | ❌  | ""    | 封面图片路径             |
+| `tags`        | string[] | ❌  | []    | 标签列表               |
+| `category`    | string   | ❌  | ""    | 分类名称               |
+| `draft`       | boolean  | ❌  | false | 设为 true 则不会发布      |
+| `pinned`      | boolean  | ❌  | false | 设为 true 则文章置顶      |
+| `lang`        | string   | ❌  | ""    | 文章语言               |
+| `author`      | string   | ❌  | ""    | 作者名称               |
+| `encrypted`   | boolean  | ❌  | false | 是否加密文章             |
+| `password`    | string   | ❌  | ""    | 加密文章的密码            |
+| `permalink`   | string   | ❌  | -     | 自定义 URL 路径         |
 
 ### 封面图片
 
@@ -207,11 +207,6 @@ author: Mikuas
 
 ```python
 print("Hello!")
-```
-
-## 图片
-
-![示例图片](images/example.png)
 ```
 
 ### 响应式布局

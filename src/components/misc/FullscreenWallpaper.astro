@@ -122,7 +122,7 @@ const positionClass = getPositionClass(position);
 </script>
 	<!-- 桌面端壁纸 -->
 	{hasDesktopImages && (
-		<div class="hidden lg:block w-full h-full relative">
+		<div class="hidden sm:block w-full h-full relative">
 			{imageSources.desktop.map((src, index) => {
 				const isLocal = !src.startsWith("http");
 				const imageClass = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}`;
@@ -155,7 +155,7 @@ const positionClass = getPositionClass(position);
 
 	<!-- 移动端壁纸 -->
 	{hasMobileImages && (
-		<div class="block lg:hidden w-full h-full relative">
+		<div class="block sm:hidden w-full h-full relative">
 			{imageSources.mobile.map((src, index) => {
 				const isLocal = !src.startsWith("http");
 				const imageClass = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}`;
@@ -194,8 +194,8 @@ const positionClass = getPositionClass(position);
 			const wallpaperContainer = document.querySelector('[data-fullscreen-wallpaper]');
 			if (!wallpaperContainer) return;
 
-			const desktopItems = wallpaperContainer.querySelectorAll('.hidden.lg\\:block [data-carousel-item]');
-			const mobileItems = wallpaperContainer.querySelectorAll('.block.lg\\:hidden [data-carousel-item]');
+			const desktopItems = wallpaperContainer.querySelectorAll('.hidden.sm\\:block [data-carousel-item]');
+			const mobileItems = wallpaperContainer.querySelectorAll('.block.sm\\:hidden [data-carousel-item]');
 
 			function startCarousel(items) {
 				if (items.length <= 1) return;

@@ -543,7 +543,7 @@ const transparentClass = shouldEnableTransparency
                             {hasMobileImage && (
                                 <ImageWrapper 
                                     alt={`Mobile banner image ${index + 1}`} 
-                                    class:list={["block lg:hidden object-cover h-full w-full transition-transform duration-500 ease-out"]}
+                                    class:list={["block sm:hidden object-cover h-full w-full transition-transform duration-500 ease-out"]}
                                     src={Array.isArray(bannerImages.mobile) ? bannerImages.mobile[index] : (typeof bannerImages.mobile === 'string' ? bannerImages.mobile : '')} 
                                     position={siteConfig.banner.position}
                                 />
@@ -552,7 +552,7 @@ const transparentClass = shouldEnableTransparency
                             {hasDesktopImage && (
                                 <ImageWrapper 
                                     alt={`Desktop banner image ${index + 1}`} 
-                                    class:list={["hidden lg:block object-cover h-full w-full transition-transform duration-500 ease-out"]}
+                                    class:list={["hidden sm:block object-cover h-full w-full transition-transform duration-500 ease-out"]}
                                     src={Array.isArray(bannerImages.desktop) ? bannerImages.desktop[index] : (typeof bannerImages.desktop === 'string' ? bannerImages.desktop : '')} 
                                     position={siteConfig.banner.position}
                                 />
@@ -568,7 +568,7 @@ const transparentClass = shouldEnableTransparency
                 <!-- Mobile: use mobile-specific image with same logic as desktop -->
                 <ImageWrapper 
                     alt="Mobile banner image of the blog" 
-                    class:list={["block lg:hidden object-cover h-full w-full transition duration-700 opacity-100"]}
+                    class:list={["block sm:hidden object-cover h-full w-full transition duration-700 opacity-100"]}
                     src={(Array.isArray(bannerImages.mobile) ? bannerImages.mobile[0] : (typeof bannerImages.mobile === 'string' ? bannerImages.mobile : '')) || (Array.isArray(bannerImages.desktop) ? bannerImages.desktop[0] : (typeof bannerImages.desktop === 'string' ? bannerImages.desktop : '')) || ''} 
                     position={siteConfig.banner.position}
                 />
@@ -576,7 +576,7 @@ const transparentClass = shouldEnableTransparency
                 <ImageWrapper 
                     id="banner" 
                     alt="Desktop banner image of the blog" 
-                    class:list={["hidden lg:block object-cover h-full transition duration-700 opacity-100"]}
+                    class:list={["hidden sm:block object-cover h-full transition duration-700 opacity-100"]}
                     src={(Array.isArray(bannerImages.desktop) ? bannerImages.desktop[0] : (typeof bannerImages.desktop === 'string' ? bannerImages.desktop : '')) || (Array.isArray(bannerImages.mobile) ? bannerImages.mobile[0] : (typeof bannerImages.mobile === 'string' ? bannerImages.mobile : '')) || ''} 
                     position={siteConfig.banner.position}
                 />
